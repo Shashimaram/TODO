@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Page Title</title>
+</head>
+<body>
+
+  <!-- page content -->
+
+ <!-- home.html -->
+<form method="post" action=".">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" name="addnote" value="Add notes" />
+</form>
+{% comment %} <a id="notetitle" href="{{ x.get_absolute_url}}">{{ x.note|linebreaks|truncatewords:10}}</a> {% endcomment %}
+
+{% for x in mymodel %}
+
+{% if x.is_complete == False %}
+      {{ x.note|truncatewords:10}}
+      <a id="notetitle" href="{% url 'note_delete' x.pk %}">
+        <button type="button" id="delete" value="Delete" style="color: black; background-color: red;">Delete</button>
+      </a>
+      <a id="notetitle" href="{% url 'note_update' x.pk %}">
+        <button type="button" id="update" value="update" style="color: black; background-color: green;">Update</button>
+      </a> 
+      <a id="notetitle" href="{% url 'note_status' x.pk %}">
+        <button type="button" id="Status" value="status" style="color: black; background-color: blue;">Completed</button>
+      </a>
+      <br>
+{% endif %}
+{% endfor %}
+
+<p>Completed task</p>
+{% for y in completed_task %}
+      {{ y.note|truncatewords:10}}<br>
+{% endfor %}
+</body>
+</html>

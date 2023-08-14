@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Update form</title>
+</head>
+<body>
+
+  <!-- page content -->
+<form method="post" action="{% url 'note_update' notepk %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" name="addnote" value="Update notes" />
+</form>
+
+
+</body>
+</html>
