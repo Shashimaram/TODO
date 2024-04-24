@@ -84,19 +84,22 @@ WSGI_APPLICATION = 'TODO.wsgi.application'
 # }
 
 DATABASES = {
-     'default': {
-         'ENGINE': 'sql_server.pyodbc',
-         'NAME': 'tododatabase',
-         'USER': 'shashidher',
-         'PASSWORD': 'Texasinn12345',
-         'HOST': 'tododatabase.database.windows.net',
-         'PORT': '1433',
-         'OPTIONS': {
-             'driver': 'ODBC Driver 13 for SQL Server',
-             'MARS_Connection': 'True',
-         }
-     }
- }
+    'default': {
+        'ENGINE': 'mssql',
+        'NAME': 'tododatabase',
+        'USER': 'shashidher',
+        'PASSWORD': 'Texasinn',
+        'HOST': 'tododatabase.database.windows.net',
+        'PORT': '1433',
+        'OPTIONS': {
+            'driver': 'ODBC Driver 18 for SQL Server',
+            'MARS_Connection': 'True',
+            'Encrypt': 'yes',
+            'TrustServerCertificate': 'no',
+            'Connection Timeout': '30',
+        }
+    }
+}
 
 
 # Password validation
