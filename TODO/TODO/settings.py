@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-oc)(%ob#9e)eds(qa5%2z1*v^r=n1!jarqc4p3gby!dq*_416&
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -75,12 +75,28 @@ WSGI_APPLICATION = 'TODO.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'sql_server.pyodbc',
+#         'NAME': 'tododatabase',
+
+#     }
+# }
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+     'default': {
+         'ENGINE': 'sql_server.pyodbc',
+         'NAME': 'tododatabase',
+         'USER': 'shashidher',
+         'PASSWORD': 'Texasinn12345',
+         'HOST': 'tododatabase.database.windows.net',
+         'PORT': '1433',
+         'OPTIONS': {
+             'driver': 'ODBC Driver 13 for SQL Server',
+             'MARS_Connection': 'True',
+         }
+     }
+ }
 
 
 # Password validation

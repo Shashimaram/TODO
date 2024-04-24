@@ -14,7 +14,7 @@
     {{ form.as_p }}
     <input type="submit" name="addnote" value="Add notes" />
 </form>
-{% comment %} <a id="notetitle" href="{{ x.get_absolute_url}}">{{ x.note|linebreaks|truncatewords:10}}</a> {% endcomment %}
+
 
 {% for x in mymodel %}
 
@@ -33,9 +33,11 @@
 {% endif %}
 {% endfor %}
 
+<h1>hello</h1>
+
 <p>Completed task</p>
 {% for y in completed_task %}
       {{ y.note|truncatewords:10}}<br>
 {% endfor %}
 </body>
-</html>
+</html> 

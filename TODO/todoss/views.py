@@ -1,10 +1,10 @@
-from django.shortcuts import render
-from django.views.generic import TemplateView, ListView, UpdateView, DeleteView, CreateView
+from django.shortcuts import render # type: ignore
+from django.views.generic import TemplateView, ListView, UpdateView, DeleteView, CreateView # type: ignore
 from .forms import newnote,EditNote
-from django.shortcuts import HttpResponse
+from django.shortcuts import HttpResponse # type: ignore
 from .models import Notes_model 
-from django.shortcuts import get_object_or_404
-from django.shortcuts import redirect, reverse
+from django.shortcuts import get_object_or_404 # type: ignore
+from django.shortcuts import redirect, reverse # type: ignore
 
 # Create your views here.
 
